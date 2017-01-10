@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1 class="text-danger">Pirates Coming!</h1>
+    <p class="lead">Pirate is who take your money on the sea haha!</p>
+</div>
+<div id="create" class="jumbotron">
+    @using (Html.BeginForm())
+    {    
+        <p>Pirate Name</p>
+        <input type="text" id="pname" /><br><br>
+        <p>Conscript Date</p>
+        <input type="text" id="pdate" /><br><br>
+        <input id="p" type="submit" value="add" />   
+    }
+</div>
+<div id="booty1"></div>
+
+@section MyScripts{
+    <script src="~/Scripts/MyScripts.js"></script>
+}

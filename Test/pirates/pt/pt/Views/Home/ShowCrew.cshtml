@@ -1,0 +1,45 @@
+﻿@model IEnumerable<pt.Models.Crew>
+
+@{
+    ViewBag.Title = "ShowCrew";
+}
+
+<h2>ShowCrew</h2>
+
+<p>
+    @Html.ActionLink("Create New Crew", "CreateCrew")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ship.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PirateId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Booty)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ship.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PirateId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Booty)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
